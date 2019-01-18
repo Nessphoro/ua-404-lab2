@@ -3,7 +3,7 @@
 import socket
 
 # No need for getaddrinfo
-sock = socket.create_connection(("www.google.com", 80))
+sock = socket.create_connection(("127.0.0.1", 8001))
 rline = f"GET / HTTP/1.1\r\nHost: www.google.com\r\nConnection: close\r\n\r\n"
 sock.send(rline.encode("utf-8"))
 sock.shutdown(socket.SHUT_WR)
